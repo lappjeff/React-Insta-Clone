@@ -1,19 +1,30 @@
-.search-section {
+nav {
   height: 50px;
   font-size: 20px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
   align-items: center;
-  span {
+  margin: 30px 0 50px 0;
+  div {
     grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-left: 5px;
+    }
+
+    svg {
+      margin-top: 3px;
+    }
   }
   input {
     text-align: center;
     grid-column: 5 / 8;
   }
 
-  div {
+  .icons {
     grid-column: 10 / -1;
     display: flex;
     justify-content: space-between;

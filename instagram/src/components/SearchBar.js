@@ -4,15 +4,18 @@ import './searchBar.scss'
 
 const SearchBar = props => {
   return (
-    <div className='search-section'>
-      <span><i class="fab fa-instagram"></i> | Instagram</span>
+    <nav>
+      <div>
+        <i className="fab fa-instagram"></i>
+        <p> | Instagram </p>
+      </div>
       <input placeholder='search'></input>
       <div className='icons'>
-        <i class="far fa-compass"></i>
-        <i class="far fa-heart"></i>
-        <i class="far fa-user"></i>
+        <i className="far fa-compass"></i>
+        <i className="far fa-heart"></i>
+        <i className="far fa-user"></i>
       </div>
-    </div>
+    </nav>
   )
 }
 
