@@ -6,18 +6,20 @@ const PostContainer = props => {
   return (
     <div className='post-container'>
       <header>
-        <img src={props.thumbnailImg} alt='user profile image'/>
+        <img src={props.thumbnailImg} alt='user profile'/>
         <span>{props.userName}</span>
       </header>
 
       <main>
-        <img src={props.postImg}></img>
+        <img src={props.postImg} alt='posted by user'/>
         <div className='icons'>
           <i className="far fa-heart"></i>
           <i className="far fa-comment"></i>
-          <p>{`${props.likes} likes`}</p>
+          <p className='likes'>{`${props.likes} likes`}</p>
         </div>
-        <CommentSection />
+        <CommentSection
+          timestamp={props.timestamp}
+          comments={props.comments}/>
       </main>
     </div>
   )

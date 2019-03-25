@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import {SearchBar, PostContainer, CommentSection} from './components'
+import {SearchBar, PostContainer} from './components'
 import dummyData from './dummy-data'
 class App extends Component {
   constructor() {
@@ -23,6 +23,8 @@ class App extends Component {
                 postImg={post.imageUrl}
                 userName={post.username}
                 likes={post.likes}
+                comments={post.comments}
+                timestamp={post.timestamp}
               />
             )
           })}
