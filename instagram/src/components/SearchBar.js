@@ -1,9 +1,17 @@
 import React from 'react'
+import './searchBar.scss'
 
-export default props => {
+
+const SearchBar = props => {
   return (
-    <div className='seach-section'>
-      <h1>Hello from SearchBar</h1>
+    <div className='search-section'>
+      <span><i class="fab fa-instagram"></i> | Instagram</span>
+      <input placeholder='search'></input>
+      <div className='icons'>
+        <i class="far fa-compass"></i>
+      </div>
     </div>
   )
 }
+
+export default SearchBar

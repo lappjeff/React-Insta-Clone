@@ -3,8 +3,6 @@ import './App.scss';
 
 import {SearchBar, PostContainer, CommentSection} from './components'
 
-//react-strap imports
-import {NavBar, NavItem, NavLink} from 'reactstrap'
 class App extends Component {
   render() {
     return (
