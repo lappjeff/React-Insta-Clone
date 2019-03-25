@@ -9,6 +9,8 @@ const SearchBar = props => {
       <input placeholder='search'></input>
       <div className='icons'>
         <i class="far fa-compass"></i>
+        <i class="far fa-heart"></i>
+        <i class="far fa-user"></i>
       </div>
     </div>
   )

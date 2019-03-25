@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
+  align-items: center;
   span {
     grid-column: 1 / 4;
   }
@@ -13,6 +14,8 @@
   }
 
   div {
-    grid-column: 10 / -1
+    grid-column: 10 / -1;
+    display: flex;
+    justify-content: space-between;
   }
 }
