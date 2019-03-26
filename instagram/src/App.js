@@ -23,6 +23,7 @@ class App extends Component {
           {this.state.dummyData.map(post => {
             return (
               <PostContainer
+                props={post}
                 key={Date.now() + Math.random(1, 50)} thumbnailImg={post.thumbnailUrl}
                 postImg={post.imageUrl}
                 userName={post.username}
@@ -50,5 +51,7 @@ PostContainer.propTypes = {
   postImg: PropTypes.string,
   userName: PropTypes.string,
 }
+
+// PostContainer.defaultPr
 
 export default App;
