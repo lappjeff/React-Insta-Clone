@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const PostHeader = props => {
   return (
@@ -7,5 +8,9 @@ const PostHeader = props => {
       <span>{props.username}</span>
     </header>
   )
+}
+
+PostHeader.propTypes = {
+  thumbnailImg: PropTypes.string,
 }
 export default PostHeader
