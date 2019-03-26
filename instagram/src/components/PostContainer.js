@@ -2,6 +2,8 @@ import React from 'react'
 import CommentSection from './CommentSection'
 import './postContainer.scss'
 
+import PropTypes from 'prop-types'
+
 const PostContainer = props => {
   return (
     <div className='post-container'>
@@ -23,6 +25,19 @@ const PostContainer = props => {
       </main>
     </div>
   )
+}
+
+PostContainer.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      username: PropTypes.string
+    })
+  ),
+  thumbnailImg: PropTypes.string,
+  likes: PropTypes.number,
+  postImg: PropTypes.string,
+  userName: PropTypes.string,
 }
 
 export default PostContainer

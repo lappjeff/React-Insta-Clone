@@ -3,12 +3,16 @@ import './App.scss';
 
 import {SearchBar, PostContainer} from './components'
 import dummyData from './dummy-data'
+
+import PropTypes from 'prop-types'
+
 class App extends Component {
   constructor() {
     super();
 
-    this.state = dummyData
-
+    this.state = {
+      dummyData
+    }
   }
 
   render() {
@@ -16,7 +20,7 @@ class App extends Component {
       <div className="App">
         <div className='container'>
           <SearchBar />
-          {this.state.map(post => {
+          {this.state.dummyData.map(post => {
             return (
               <PostContainer
                 key={Date.now() + Math.random(1, 50)} thumbnailImg={post.thumbnailUrl}
@@ -33,5 +37,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
