@@ -38,6 +38,17 @@ class App extends Component {
   }
 }
 
-
+PostContainer.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      username: PropTypes.string
+    })
+  ),
+  thumbnailImg: PropTypes.string,
+  likes: PropTypes.number,
+  postImg: PropTypes.string,
+  userName: PropTypes.string,
+}
 
 export default App;

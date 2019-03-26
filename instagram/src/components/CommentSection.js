@@ -1,7 +1,7 @@
 import React, { Fragment }from 'react'
 import './commentSection.scss'
 
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const CommentSection = props => {
   return (
@@ -19,7 +19,6 @@ const CommentSection = props => {
       </form>
     </div>
   )
-
 }
 
 export default CommentSection
