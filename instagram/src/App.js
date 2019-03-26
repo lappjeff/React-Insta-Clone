@@ -6,7 +6,6 @@ import SearchBar from './components/SearchBar/SearchBar'
 
 import dummyData from './dummy-data'
 
-import PropTypes from 'prop-types'
 
 class App extends Component {
   constructor() {
@@ -20,6 +19,7 @@ class App extends Component {
   componentDidMount() {
     this.setState({data: dummyData})
   }
+  
   render() {
     return (
       <div className="App">
@@ -33,20 +33,5 @@ class App extends Component {
     );
   }
 }
-
-// PostContainer.propTypes = {
-//   comments: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       text: PropTypes.string,
-//       username: PropTypes.string
-//     })
-//   ),
-//   thumbnailImg: PropTypes.string,
-//   likes: PropTypes.number,
-//   postImg: PropTypes.string,
-//   userName: PropTypes.string,
-// }
-
-// PostContainer.defaultPr
 
 export default App;

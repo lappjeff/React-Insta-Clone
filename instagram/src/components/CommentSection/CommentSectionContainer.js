@@ -1,16 +1,25 @@
 import React from 'react'
 import './commentSection.scss'
-import PropTypes from 'prop-types'
 import CommentInput from './CommentInput'
 import Comment from './Comment'
 
-const CommentSectionContainer = props => {
-  return (
-    <div className='comment-section'>
-      <Comment comments={props.comments} />
+class CommentSectionContainer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comment: ''
+    }
+  }
+
+  render() {
+    return (
+      <div className='comment-section'>
+      <Comment comments={this.props.comments} />
       <CommentInput />
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default CommentSectionContainer
