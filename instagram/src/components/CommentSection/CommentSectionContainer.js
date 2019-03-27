@@ -34,16 +34,6 @@ class CommentSectionContainer extends React.Component {
 
   }
 
-  //   const newComment = this.props.comments.slice();
-  //   const array = [
-  //     ...this.props.co
-  //   ]
-  // }
-
-  // addNewComment = (event, index) => {
-  //   event.preventDefault();
-  // }
-
   handleChanges = event => {
     this.setState({ [event.target.name]: event.target.value})
   }
