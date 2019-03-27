@@ -8,7 +8,7 @@ class PostContainer extends React.Component{
   render () {
     return (
       <>
-      {this.props.posts.map(post => {
+      {this.props.filteredData.map(post => {
         return (
           <Post likes={post.likes} increaseLikes={this.increaseLikes} key={post.imageUrl} postItem={post}/>
         )

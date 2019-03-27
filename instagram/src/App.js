@@ -12,20 +12,33 @@ class App extends Component {
     super();
 
     this.state = {
-       data: []
+       data: [],
+       searchInput: ''
     }
+  }
+
+  handleSearchChanges = event => {
+    this.setState({ searchInput: event.target.value})
   }
 
   componentDidMount() {
     this.setState({data: dummyData})
   }
-  
+
   render() {
+
+    const filteredData = this.state.data.filter(post => {
+      if (post.username.includes(this.state.searchInput)) {
+        return true;
+      } else {
+        return false;
+      }
+    })
     return (
       <div className="App">
         <div className='container'>
-          <SearchBar />
-          <PostContainer posts={this.state.data} />
+          <SearchBar handleSearchChanges={this.handleSearchChanges}/>
+          <PostContainer filteredData={filteredData} posts={this.state.data} />
 
 
         </div>
