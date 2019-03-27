@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-// import PostContainer from './components/PostsContainer/PostContainer'
-// import SearchBar from './components/SearchBar/SearchBar'
-
-import PostsPage from './components/PostsContainer/PostsPage'
 import dummyData from './dummy-data'
+import PostsPage from './components/PostsContainer/PostsPage'
+import LoginPage from './components/Login/LoginPage'
+import withAuthenticate from './authentication/Authenticate'
 
 
 class App extends Component {
@@ -18,8 +17,8 @@ class App extends Component {
     }
   }
 
-  handleSearchChanges = event => {
-    this.setState({ searchInput: event.target.value})
+  handleChanges = event => {
+    this.setState({ [event.target.name]: event.target.value})
   }
 
   componentDidMount() {
@@ -43,13 +42,20 @@ class App extends Component {
 
     return (
       <div className="App">
-        <PostsPage
-          filteredData={filteredData}
-          data={this.state.data}
-          handleSearchChanges={this.handleSearchChanges} />
+      <LoginPage
+        handleChanges={this.handleChanges}
+      />
+
+      <ComponentFromWithAuthenticate
+        filteredData={filteredData}
+        posts={this.state.data}
+        handleChanges={this.handleChanges}
+      />
       </div>
     );
   }
 }
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
 export default App;

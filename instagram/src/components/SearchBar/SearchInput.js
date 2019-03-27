@@ -7,7 +7,10 @@ class SearchInput extends React.Component {
     return (
       <>
         <form>
-          <input onChange={this.props.handleSearchChanges} placeholder='search'></input>
+          <input
+          onChange={this.props.handleSearchChanges}
+          name='searchInput'
+          placeholder='search'></input>
         </form>
 
       </>
