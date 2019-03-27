@@ -19,8 +19,14 @@ nav {
       margin-top: 3px;
     }
   }
-  input {
-    text-align: center;
+  form {
+
+    input {
+      border: 1px solid lightgray;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
     grid-column: 5 / 8;
   }
 
