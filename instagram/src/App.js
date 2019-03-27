@@ -17,6 +17,7 @@ class App extends Component {
        username: '',
        password: '',
        loggedIn: false
+
     }
   }
 
@@ -26,17 +27,23 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({data: dummyData})
+
+    if (localStorage.getItem('username')) {
+      this.setState({loggedIn: true})
+      this.setState({username: localStorage.getItem('username')})
+    }
+    
+
   }
 
   toggleLoggedIn = event => {
     if (this.state.username.length > 0) {
       localStorage.setItem('username', this.state.username)
     } else {
-      event.preventDefault();
       return alert('Please provide a username')
     }
-    this.setState({loggedIn: !this.state.loggedIn})
   }
+
   render() {
 
     const filteredData = this.state.data.filter(post => {
@@ -54,22 +61,19 @@ class App extends Component {
 
     return (
       <div className="App">
-      <LoginPage
-        handleChanges={this.handleChanges}
-        loggedIn={this.state.loggedIn}
-        toggleLoggedIn={this.toggleLoggedIn}
-      />
 
-      <ComponentFromWithAuthenticate
-        filteredData={filteredData}
-        posts={this.state.data}
-        handleChanges={this.handleChanges}
-      />
+
+        <ComponentFromWithAuthenticate
+          filteredData={filteredData}
+          posts={this.state.data}
+          handleChanges={this.handleChanges}
+          loggedIn={this.toggleLoggedIn}
+        />
       </div>
     );
   }
 }
 
-const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(LoginPage)
 
 export default App;

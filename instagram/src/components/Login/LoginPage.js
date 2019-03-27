@@ -14,7 +14,7 @@ class LoginPage extends React.Component {
       <div className='login-container'>
         <LoginForm
           handleChanges={this.props.handleChanges}
-          toggleLoggedIn={this.props.toggleLoggedIn}
+          toggleLoggedIn={this.props.loggedIn}
         />
       </div>
     )

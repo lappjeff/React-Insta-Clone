@@ -1,15 +1,20 @@
 import React from 'react'
 
-const withAuthenticate = Component =>
+const withAuthenticate = First => Second =>
   class ReturnComponent extends React.Component {
     constructor(props) {
       super(props);
-
     }
+
     render() {
-      return <Component
+      if (localStorage.getItem('username')) {
+        return <First
+          {...this.props}
+        />;
+      }
+      return <Second
         {...this.props}
-      />;
+      />
     }
   }
 
