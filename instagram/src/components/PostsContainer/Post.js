@@ -15,8 +15,7 @@ class Post extends React.Component {
 
   increaseLikes = () => {
     let addLike = this.state.likes + 1;
-    console.log('test')
-    console.log(addLike)
+
     this.setState({ likes: addLike })
   }
 

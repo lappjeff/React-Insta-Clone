@@ -4,13 +4,8 @@ import './postContainer.scss'
 import Post from './Post'
 
 class PostContainer extends React.Component{
-  constructor(props) {
-    super(props);
-
-  }
 
   render () {
-    console.log(this.props)
     return (
       <>
       {this.props.posts.map(post => {

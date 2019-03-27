@@ -1,6 +1,7 @@
 import React from 'react'
 import './searchBar.scss'
 
+import SearchInput from './SearchInput'
 
 const SearchBar = props => {
   return (
@@ -9,7 +10,7 @@ const SearchBar = props => {
         <i className="fab fa-instagram"></i>
         <p> | Instagram </p>
       </div>
-      <input placeholder='search'></input>
+      <SearchInput />
       <div className='icons'>
         <i className="far fa-compass"></i>
         <i className="far fa-heart"></i>
