@@ -3,6 +3,8 @@ import './commentSection.scss'
 import CommentInput from './CommentInput'
 import Comment from './Comment'
 
+const userName = localStorage.getItem('username')
+
 class CommentSectionContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class CommentSectionContainer extends React.Component {
     this.state = {
       commentsCopy: this.props.comments,
       comment: '',
-      username: 'lappjeff'
+      username: userName
     }
   }
 

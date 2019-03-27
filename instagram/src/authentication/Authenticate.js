@@ -7,14 +7,12 @@ const withAuthenticate = First => Second =>
 
       this.state = {
         loggedIn: false,
-        username: ''
       }
     }
 
     componentDidMount() {
       if (localStorage.getItem('username')) {
         this.setState({loggedIn: true})
-        this.setState({username: localStorage.getItem('username')})
       }
     }
 
