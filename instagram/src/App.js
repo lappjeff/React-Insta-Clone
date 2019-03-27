@@ -13,7 +13,10 @@ class App extends Component {
 
     this.state = {
        data: [],
-       searchInput: ''
+       searchInput: '',
+       username: '',
+       password: '',
+       loggedIn: false
     }
   }
 
@@ -25,6 +28,15 @@ class App extends Component {
     this.setState({data: dummyData})
   }
 
+  toggleLoggedIn = event => {
+    if (this.state.username.length > 0) {
+      localStorage.setItem('username', this.state.username)
+    } else {
+      event.preventDefault();
+      return alert('Please provide a username')
+    }
+    this.setState({loggedIn: !this.state.loggedIn})
+  }
   render() {
 
     const filteredData = this.state.data.filter(post => {
@@ -44,6 +56,8 @@ class App extends Component {
       <div className="App">
       <LoginPage
         handleChanges={this.handleChanges}
+        loggedIn={this.state.loggedIn}
+        toggleLoggedIn={this.toggleLoggedIn}
       />
 
       <ComponentFromWithAuthenticate
