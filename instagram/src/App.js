@@ -28,12 +28,18 @@ class App extends Component {
   render() {
 
     const filteredData = this.state.data.filter(post => {
-      if (post.username.includes(this.state.searchInput)) {
-        return true;
-      } else {
-        return false;
-      }
+      return post.username.includes(this.state.searchInput)
+
+      //The above line is just shorthand for this:
+
+      // if (post.username.includes(this.state.searchInput)) {
+      //   return true;
+      // } else {
+      //   return false;
+      // }
+      
     })
+
     return (
       <div className="App">
         <div className='container'>
