@@ -28,19 +28,16 @@ class App extends Component {
   componentDidMount() {
     this.setState({data: dummyData})
 
-    if (localStorage.getItem('username')) {
-      this.setState({loggedIn: true})
-      this.setState({username: localStorage.getItem('username')})
-    }
-    
-
   }
 
   toggleLoggedIn = event => {
-    if (this.state.username.length > 0) {
+    if (this.state.username.length > 0 && this.state.password.length > 0) {
       localStorage.setItem('username', this.state.username)
+      localStorage.setItem('password', this.state.password)
+
     } else {
-      return alert('Please provide a username')
+      event.preventDefault();
+      return alert('Please fill both fields')
     }
   }
 
