@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import PostContainer from './components/PostsContainer/PostContainer'
-import SearchBar from './components/SearchBar/SearchBar'
+// import PostContainer from './components/PostsContainer/PostContainer'
+// import SearchBar from './components/SearchBar/SearchBar'
 
+import PostsPage from './components/PostsContainer/PostsPage'
 import dummyData from './dummy-data'
 
 
@@ -37,17 +38,15 @@ class App extends Component {
       // } else {
       //   return false;
       // }
-      
+
     })
 
     return (
       <div className="App">
-        <div className='container'>
-          <SearchBar handleSearchChanges={this.handleSearchChanges}/>
-          <PostContainer filteredData={filteredData} posts={this.state.data} />
-
-
-        </div>
+        <PostsPage
+          filteredData={filteredData}
+          data={this.state.data}
+          handleSearchChanges={this.handleSearchChanges} />
       </div>
     );
   }

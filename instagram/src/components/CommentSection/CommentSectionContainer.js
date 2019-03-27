@@ -31,7 +31,6 @@ class CommentSectionContainer extends React.Component {
       })
     }
     return
-
   }
 
   handleChanges = event => {
