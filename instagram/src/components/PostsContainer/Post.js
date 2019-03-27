@@ -4,24 +4,43 @@ import './postContainer.scss'
 import CommentSectionContainer from '../CommentSection/CommentSectionContainer'
 import PostHeader from './PostHeader'
 
-const Post = props => {
-  return (
-    <div className='post-container'>
+class Post extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      likes: this.props.likes
+    }
+  }
+
+  increaseLikes = () => {
+    let addLike = this.state.likes + 1;
+    console.log('test')
+    console.log(addLike)
+    this.setState({ likes: addLike })
+  }
+
+  render() {
+    return (
+      <div className='post-container'>
       <PostHeader
-        username={props.postItem.username}
-        thumbnailImg={props.postItem.thumbnailUrl}
+      username={this.props.postItem.username}
+      thumbnailImg={this.props.postItem.thumbnailUrl}
       />
       <main>
-        <img src={props.postItem.imageUrl} alt='user post'/>
-        <div className='icons'>
-           <i className="far fa-heart"></i>
-           <i className="far fa-comment"></i>
-           <p className='likes'>{`${props.postItem.likes} likes`}</p>
-         </div>
-         <CommentSectionContainer comments={props.postItem.comments}/>
+      <img src={this.props.postItem.imageUrl} alt='user post'/>
+      <div className='icons'>
+      <div onClick={this.increaseLikes} >
+      <i className="far fa-heart"></i>
+      </div>
+      <i className="far fa-comment"></i>
+      </div>
+      <p className='likes'>{`${this.state.likes} likes`}</p>
+      <CommentSectionContainer comments={this.props.postItem.comments}/>
       </main>
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 

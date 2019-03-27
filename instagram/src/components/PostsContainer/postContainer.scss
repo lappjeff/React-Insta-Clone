@@ -16,8 +16,11 @@
   }
 
   .icons {
+    display: flex;
     svg {
       margin: 10px;
+      height: 25px;
+      width: 20px;
     }
   }
 

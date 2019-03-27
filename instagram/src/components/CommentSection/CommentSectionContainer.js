@@ -16,16 +16,6 @@ class CommentSectionContainer extends React.Component {
 
   addNewComment = (event, index) => {
     event.preventDefault();
-    // this.setState({
-    //   commentsCopy: [
-    //     ...this.state.commentsCopy,
-    //     {
-    //       username: this.state.username,
-    //       text: this.state.comment
-    //     }
-    //   ],
-    // })
-
 
     const commentsCopied = this.state.commentsCopy.slice();
     const newComment = {

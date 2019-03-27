@@ -3,16 +3,24 @@ import './postContainer.scss'
 
 import Post from './Post'
 
-const PostContainer = props => {
-  return (
-    <>
-      {props.posts.map(post => {
+class PostContainer extends React.Component{
+  constructor(props) {
+    super(props);
+
+  }
+
+  render () {
+    console.log(this.props)
+    return (
+      <>
+      {this.props.posts.map(post => {
         return (
-          <Post key={post.imageUrl} postItem={post}/>
+          <Post likes={post.likes} increaseLikes={this.increaseLikes} key={post.imageUrl} postItem={post}/>
         )
       })}
-    </>
-  )
+      </>
+    )
+  }
 }
 
 
