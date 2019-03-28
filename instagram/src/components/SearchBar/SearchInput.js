@@ -13,7 +13,6 @@ class SearchInput extends React.Component {
           name='searchInput'
           placeholder='search'></input>
         </form>
-
       </>
     )
   }

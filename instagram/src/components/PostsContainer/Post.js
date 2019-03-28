@@ -35,8 +35,10 @@ class Post extends React.Component {
         <i className="far fa-comment"></i>
         </div>
         <p className='likes'>{`${this.state.likes} likes`}</p>
-        <CommentSectionContainer comments={this.props.postItem.comments}
+        <CommentSectionContainer
+        comments={this.props.postItem.comments}
         handleChanges={this.props.handleChanges}
+        logOut={this.props.logOut}
         />
       </main>
       </div>
