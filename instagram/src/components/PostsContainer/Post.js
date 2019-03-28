@@ -1,6 +1,7 @@
 import React from 'react'
 import './postContainer.scss'
 
+import PropTypes from 'prop-types'
 import CommentSectionContainer from '../CommentSection/CommentSectionContainer'
 import PostHeader from './PostHeader'
 
@@ -46,5 +47,13 @@ class Post extends React.Component {
   }
 }
 
+Post.propTypes = {
+  likes: PropTypes.number,
+  postItem: PropTypes.shape({
+      imageUrl: PropTypes.string,
+      thumbnailUrl: PropTypes.string,
+      username: PropTypes.string
+  })
+}
 
 export default Post
