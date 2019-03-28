@@ -1,6 +1,4 @@
 import React from 'react'
-import './postContainer.scss'
-
 import Post from './Post'
 
 class PostContainer extends React.Component{
