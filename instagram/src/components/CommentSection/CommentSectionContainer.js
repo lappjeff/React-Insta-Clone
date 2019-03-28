@@ -3,6 +3,8 @@ import './commentSection.scss'
 import CommentInput from './CommentInput'
 import Comment from './Comment'
 
+const userName = localStorage.getItem('username')
+
 class CommentSectionContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class CommentSectionContainer extends React.Component {
     this.state = {
       commentsCopy: this.props.comments,
       comment: '',
-      username: 'lappjeff'
+      username: userName
     }
   }
 
@@ -31,18 +33,7 @@ class CommentSectionContainer extends React.Component {
       })
     }
     return
-
   }
-
-  //   const newComment = this.props.comments.slice();
-  //   const array = [
-  //     ...this.props.co
-  //   ]
-  // }
-
-  // addNewComment = (event, index) => {
-  //   event.preventDefault();
-  // }
 
   handleChanges = event => {
     this.setState({ [event.target.name]: event.target.value})

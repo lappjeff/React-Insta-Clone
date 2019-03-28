@@ -10,7 +10,7 @@ const SearchBar = props => {
         <i className="fab fa-instagram"></i>
         <p> | Instagram </p>
       </div>
-      <SearchInput />
+      <SearchInput handleSearchChanges={props.handleSearchChanges}/>
       <div className='icons'>
         <i className="far fa-compass"></i>
         <i className="far fa-heart"></i>
