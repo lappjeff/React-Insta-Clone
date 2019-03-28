@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import {Username} from './CommentStyles'
 const Comment = props => {
   return (
     <>
       {props.comments.map(comment => {
         return (
           <div key={Date.now + Math.random(1, 50)}>
-            <p><span>{comment.username}</span> {comment.text}</p>
+            <p>
+              <Username>{comment.username}</Username> {comment.text}
+            </p>
           </div>
         )
       })}
