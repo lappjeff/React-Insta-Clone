@@ -1,6 +1,6 @@
 import React from 'react'
 import {Icon} from '../GlobalStyles'
-import {Container, PostIcons } from './PostStyles'
+import {PostIcons } from './PostStyles'
 
 import PropTypes from 'prop-types'
 import CommentSectionContainer from '../CommentSection/CommentSectionContainer'

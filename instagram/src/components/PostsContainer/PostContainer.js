@@ -2,9 +2,7 @@ import React from 'react'
 import Post from './Post'
 
 class PostContainer extends React.Component{
-  constructor(props) {
-    super(props);
-  }
+
   render () {
     return (
       <>

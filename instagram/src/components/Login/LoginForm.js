@@ -1,27 +1,28 @@
 import React from 'react'
+import {Form, LoginInput, LoginButton} from './LoginStyles'
 
 const LoginForm = props => {
   return (
-    <form>
+    <Form>
 
       <p>Enter Username:</p>
-      <input
+      <LoginInput
         onChange={props.handleChanges}
         name='username'
         placeholder='Username'
       />
 
       <p>Enter Password:</p>
-      <input name='password'
+      <LoginInput name='password'
         placeholder='Password'
         type='password'
         onChange={props.handleChanges}
       />
-      <button
+      <LoginButton
       onClick={props.toggleLoggedIn}
-      type='submit'>Submit</button>
+      type='submit'>Submit</LoginButton>
 
-    </form>
+    </Form>
   )
 }
 export default LoginForm

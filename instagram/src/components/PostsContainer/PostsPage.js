@@ -4,9 +4,7 @@ import PostContainer from './PostContainer'
 import SearchBar from '../SearchBar/SearchBar'
 
 class PostsPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render () {
     return (
       <div className='container'>

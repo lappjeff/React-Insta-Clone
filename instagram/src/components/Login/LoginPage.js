@@ -1,6 +1,6 @@
 import React from 'react'
-import './login.scss'
 
+import {LoginContainer} from './LoginStyles'
 import LoginForm from './LoginForm'
 
 class LoginPage extends React.Component {
@@ -11,12 +11,12 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className='login-container'>
+      <LoginContainer className='login-container'>
         <LoginForm
           handleChanges={this.props.handleChanges}
           toggleLoggedIn={this.props.loggedIn}
         />
-      </div>
+      </LoginContainer>
     )
   }
 }
