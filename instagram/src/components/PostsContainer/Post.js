@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import CommentSectionContainer from '../CommentSection/CommentSectionContainer'
 import PostHeader from './PostHeader'
 
+
 class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -29,17 +30,20 @@ class Post extends React.Component {
       />
       <main>
         <img src={this.props.postItem.imageUrl} alt='user post'/>
+
         <div className='icons'>
-        <div onClick={this.increaseLikes} >
-        <i className="far fa-heart"></i>
+          <div onClick={this.increaseLikes} >
+            <i className="far fa-heart"></i>
+            </div>
+            <i className="far fa-comment"></i>
         </div>
-        <i className="far fa-comment"></i>
-        </div>
+
         <p className='likes'>{`${this.state.likes} likes`}</p>
+        
         <CommentSectionContainer
-        comments={this.props.postItem.comments}
-        handleChanges={this.props.handleChanges}
-        logOut={this.props.logOut}
+          comments={this.props.postItem.comments}
+          handleChanges={this.props.handleChanges}
+          logOut={this.props.logOut}
         />
       </main>
       </div>
