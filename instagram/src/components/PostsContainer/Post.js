@@ -1,8 +1,11 @@
 import React from 'react'
-import './postContainer.scss'
+import {Icon} from '../GlobalStyles'
+import {PostIcons } from './PostStyles'
 
+import PropTypes from 'prop-types'
 import CommentSectionContainer from '../CommentSection/CommentSectionContainer'
 import PostHeader from './PostHeader'
+
 
 class Post extends React.Component {
   constructor(props) {
@@ -21,28 +24,54 @@ class Post extends React.Component {
 
   render() {
     return (
+
       <div className='post-container'>
-      <PostHeader
-        username={this.props.postItem.username}
-        thumbnailImg={this.props.postItem.thumbnailUrl}
-      />
-      <main>
-        <img src={this.props.postItem.imageUrl} alt='user post'/>
-        <div className='icons'>
-        <div onClick={this.increaseLikes} >
-        <i className="far fa-heart"></i>
-        </div>
-        <i className="far fa-comment"></i>
-        </div>
-        <p className='likes'>{`${this.state.likes} likes`}</p>
-        <CommentSectionContainer comments={this.props.postItem.comments}
-        handleChanges={this.props.handleChanges}
+
+        <PostHeader
+          username={this.props.postItem.username}
+          thumbnailImg={this.props.postItem.thumbnailUrl}
         />
-      </main>
+
+        <main>
+          <img src={this.props.postItem.imageUrl} alt='user post'/>
+
+          <PostIcons>
+            <div onClick={this.increaseLikes} >
+              <Icon
+                 className="far fa-heart"
+                 margin='10px'
+                 height='25px'
+                 width='20px'
+               />
+              </div>
+              <Icon
+                 className="far fa-comment"
+                 margin='10px'
+                 height='25px'
+                 width='20px'
+               />
+          </PostIcons>
+
+          <p className='likes'>{`${this.state.likes} likes`}</p>
+
+          <CommentSectionContainer
+            comments={this.props.postItem.comments}
+            handleChanges={this.props.handleChanges}
+            logOut={this.props.logOut}
+          />
+        </main>
       </div>
     )
   }
 }
 
+Post.propTypes = {
+  likes: PropTypes.number,
+  postItem: PropTypes.shape({
+      imageUrl: PropTypes.string,
+      thumbnailUrl: PropTypes.string,
+      username: PropTypes.string
+  })
+}
 
 export default Post

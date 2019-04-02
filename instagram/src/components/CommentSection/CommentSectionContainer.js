@@ -1,5 +1,4 @@
 import React from 'react'
-import './commentSection.scss'
 import CommentInput from './CommentInput'
 import Comment from './Comment'
 
@@ -42,12 +41,12 @@ class CommentSectionContainer extends React.Component {
   render() {
     return (
       <div className='comment-section'>
-      <Comment comments={this.state.commentsCopy} />
-      <CommentInput
-        addNewComment={this.addNewComment}
-        handleChanges={this.handleChanges}
-        comment={this.state.comment}
-        />
+        <Comment comments={this.state.commentsCopy} />
+        <CommentInput
+          addNewComment={this.addNewComment}
+          handleChanges={this.handleChanges}
+          comment={this.state.comment}
+          />
       </div>
     )
   }

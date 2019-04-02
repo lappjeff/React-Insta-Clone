@@ -1,18 +1,19 @@
 import React from 'react'
-
+import {Icon} from '../GlobalStyles'
+import {CommentForm, NewComment} from './CommentStyles'
 class CommentInput extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.addNewComment}>
-        <input
+      <CommentForm onSubmit={this.props.addNewComment}>
+        <NewComment
           name='comment'
           value={this.props.comment}
           onChange={this.props.handleChanges}
           placeholder='Add a comment...'
           />
-        <i className="fas fa-ellipsis-h"></i>
-      </form>
+        <Icon className="fas fa-ellipsis-h" />
+      </CommentForm>
     )
   }
 }

@@ -1,22 +1,25 @@
 import React from 'react'
-import './searchBar.scss'
 
 import SearchInput from './SearchInput'
 
+import {Icon} from '../GlobalStyles'
+import {Header, LogoHeader} from './SearchBarStyles'
+
 const SearchBar = props => {
   return (
-    <nav>
-      <div>
-        <i className="fab fa-instagram"></i>
+
+    <Header>
+      <LogoHeader>
+        <Icon className="fab fa-instagram" />
         <p> | Instagram </p>
-      </div>
+      </LogoHeader>
       <SearchInput handleSearchChanges={props.handleSearchChanges}/>
       <div className='icons'>
-        <i className="far fa-compass"></i>
-        <i className="far fa-heart"></i>
-        <i className="far fa-user"></i>
+        <Icon className="far fa-compass" />
+        <Icon className="far fa-heart" />
+        <Icon className="far fa-user" />
       </div>
-    </nav>
+    </Header>
   )
 }
 
